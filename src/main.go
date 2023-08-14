@@ -7,6 +7,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
 
 	"github.com/joho/godotenv"
 	"njetch.com/cheap-fuel-location.git/src/models"
@@ -16,7 +17,14 @@ import (
 var xmlHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 
 func main() {
-	err := godotenv.Load()
+
+	ex, err := os.Executable()
+	if err != nil {
+		panic(err)
+	}
+	exPath := filepath.Dir(ex)
+
+	err = godotenv.Load(exPath + "/.env")
 	if err != nil {
 		panic(err)
 	}
