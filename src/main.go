@@ -71,7 +71,7 @@ func main() {
 
 	fmt.Println("")
 
-	fmt.Printf("The cheapest diesel is in %s %s at %f\n", cheapestPriceItem.Name, cheapestPriceItem.State, cheapestPriceItem.Price)
+	fmt.Printf("The cheapest diesel is from %s %s at %f\n", cheapestPriceItem.Name, cheapestPriceItem.State, cheapestPriceItem.Price)
 	fmt.Printf("Lat: %f, Lon: %f\n", cheapestPriceItem.Lat, cheapestPriceItem.Lng)
 
 	xmlFile, err := os.Open(configurationFile)
