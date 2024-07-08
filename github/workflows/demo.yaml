@@ -1,0 +1,26 @@
+name: Tagging demo
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"
+    tags:
+      - "v*"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "src/**"
+
+jobs:
+  tagging:
+    name: Tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Log
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        run: |
+          echo "logging"
