@@ -7,7 +7,7 @@ on:
       - features/**
     paths:
       - "src/**"
-      - "./.github/workflows/demo.yaml"
+      - ".github/workflows/demo.yaml"
     tags:
       - "v*"
   pull_request:
@@ -17,7 +17,7 @@ on:
       - features/**
     paths:
       - "src/**"
-      - "./.github/workflows/demo.yaml"
+      - ".github/workflows/demo.yaml"
 
   workflow_dispatch:
 
