@@ -32,6 +32,9 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/tags/v') }}
         run: |
           echo "logging"
+          echo ${{ github.ref }}
+          echo ${{ github.ref_name }}
+          echo ${{ github.head_ref }}
       - name: CheckCondition
         if: |
           github.ref == 'refs/heads/main'
